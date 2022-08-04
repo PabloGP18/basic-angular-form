@@ -3,16 +3,16 @@
 
 <form action="" method="post" #formName="ngForm">
   <label for="firstName" class="control-label">First Name</label>
-  <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="friendModel.firstName" id="firstName" placeholder="First Name">
+  <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="friendModel.firstName" id="firstName" placeholder="First Name" class="alert alert-danger" required>
 
   <label for="lastName" class="control-label">Last Name</label>
-  <input type="text" name="lastName" id="lastName" #lastName="ngModel" [(ngModel)]="friendModel.lastName" placeholder="Last Name">
+  <input type="text" name="lastName" id="lastName" #lastName="ngModel" [(ngModel)]="friendModel.lastName" placeholder="Last Name" class="alert alert-danger" required>
 
   <label for="email" class="control-label">Email</label>
-  <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="friendModel.email" placeholder="Email">
+  <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="friendModel.email" placeholder="Email" class="alert alert-danger" required>
 
   <label for="telephoneNumber" class="control-labels">Telephone Number</label>
-  <input type="text" name="telephoneNumber" id="telephoneNumber" #telephoneNumber="ngModel" [(ngModel)]="friendModel.phoneNumber" placeholder="Telephone Number">
+  <input type="text" name="telephoneNumber" id="telephoneNumber" #telephoneNumber="ngModel" [(ngModel)]="friendModel.phoneNumber" placeholder="Telephone Number" class="alert alert-danger" required>
 
   <label for="languages" class="control-labels">Languages</label>
   <select name="languages" id="languages"  #language="ngModel" [(ngModel)]="friendModel.languages">

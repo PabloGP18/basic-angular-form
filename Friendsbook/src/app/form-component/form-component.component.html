@@ -1,0 +1,22 @@
+<form action="" method="post" #formName="ngForm">
+  <label for="firstName" class="control-label">First Name</label>
+  <input type="text" name="firstName" #firstName="ngModel" id="firstName" placeholder="First Name">
+
+  <label for="lastName" class="control-label">Last Name</label>
+  <input type="text" name="lastName" id="lastName" placeholder="Last Name">
+
+  <label for="email" class="control-label">Email</label>
+  <input type="email" name="email" id="email" placeholder="Email">
+
+  <label for="telephoneNumber" class="control-labels">Telephone Number</label>
+  <input type="number" name="telephoneNumber" id="telephoneNumber" placeholder="Telephone Number">
+
+  <label for="languages" class="control-labels">Languages</label>
+  <select name="languages" id="languages" placeholder="Language">
+    <option *ngFor="let language of languages">
+    {{language}}
+    </option>
+  </select>
+
+  <button type="submit" name="submit" id="submit">Submit</button>
+</form>

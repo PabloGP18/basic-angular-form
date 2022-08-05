@@ -1,20 +1,40 @@
 {{ friendModel | json }}.
 
-
 <form action="" method="post" #formName="ngForm">
-  <label for="firstName" class="control-label">First Name</label>
-  <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="friendModel.firstName" id="firstName" placeholder="First Name" class="alert alert-danger" required>
+  <label for="firstName" class="control-label">First Name: </label>
+  <input type="text" name="firstName" #firstName="ngModel" [(ngModel)]="friendModel.firstName" id="firstName" placeholder="First Name"
+        pattern="^[\w'-,.][^0-9_!¡?÷?¿/\+=@#$%ˆ&*(){}|~<>;:[]]{2,}$" [class.alert-danger]="firstName.invalid && firstName.touched" required>
+  <div *ngIf="firstName.invalid && firstName.touched" class="alert alert-danger">
+    <div *ngIf="firstName.errors?.['pattern']">
+      your name can not contain any numbers
+    </div>
+  </div>
+  <label for="lastName" class="control-label">Last Name: </label>
+  <input type="text" name="lastName" id="lastName" #lastName="ngModel" [(ngModel)]="friendModel.lastName" placeholder="Last Name"
+         pattern="^[\w'-,.][^0-9_!¡?÷?¿/\+=@#$%ˆ&*(){}|~<>;:[]]{2,}$" [class.alert-danger]="lastName.invalid && lastName.touched" required>
+  <div *ngIf="lastName.invalid && lastName.touched" class="alert alert-danger">
+    <div *ngIf="firstName.errors?.['pattern']">
+      your name can not contain any numbers
+    </div>
+  </div>
+  <label for="email" class="control-label">Email: </label>
+  <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="friendModel.email" placeholder="Email"
+         pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" [class.alert-danger]="email.invalid && email.touched" required>
+  <div *ngIf="email.invalid && email.touched" class="alert alert-danger">
+    <div *ngIf="email.errors?.['pattern']">
+      your email is not valid
+    </div>
+  </div>
+  <label for="telephoneNumber" class="control-labels">Telephone Number: </label>
+  <input type="text" name="telephoneNumber" id="telephoneNumber" #telephoneNumber="ngModel" [(ngModel)]="friendModel.phoneNumber" placeholder="Telephone Number" [class.alert-danger]="telephoneNumber.invalid && telephoneNumber.touched"
+         pattern="^(((\+|00)32[ ]?(?:\(0\)[ ]?)?)|0){1}(4(60|[789]\d)\/?(\s?\d{2}\.?){2}(\s?\d{2})|(\d\/?\s?\d{3}|\d{2}\/?\s?\d{2})(\.?\s?\d{2}){2})$" required>
+  <div *ngIf="telephoneNumber.invalid && telephoneNumber.touched" class="alert alert-danger">
+    <div *ngIf="telephoneNumber.errors?.['pattern']">
+      your phoneNumber can not contain any letters
+    </div>
+  </div>
 
-  <label for="lastName" class="control-label">Last Name</label>
-  <input type="text" name="lastName" id="lastName" #lastName="ngModel" [(ngModel)]="friendModel.lastName" placeholder="Last Name" class="alert alert-danger" required>
-
-  <label for="email" class="control-label">Email</label>
-  <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="friendModel.email" placeholder="Email" class="alert alert-danger" required>
-
-  <label for="telephoneNumber" class="control-labels">Telephone Number</label>
-  <input type="text" name="telephoneNumber" id="telephoneNumber" #telephoneNumber="ngModel" [(ngModel)]="friendModel.phoneNumber" placeholder="Telephone Number" class="alert alert-danger" required>
-
-  <label for="languages" class="control-labels">Languages</label>
+  <label for="languages" class="control-labels">Languages: </label>
   <select name="languages" id="languages"  #language="ngModel" [(ngModel)]="friendModel.languages">
     <option *ngFor="let language of languages"  value = "{{language}}">
     {{language}}

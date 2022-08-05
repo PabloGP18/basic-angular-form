@@ -16,8 +16,8 @@ export class FormComponentComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-
+  ngOnInit(): void {}
+  submitForm() {
+    console.log(this.friendModel);
   }
-
 }

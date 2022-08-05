@@ -40,5 +40,5 @@
     {{language}}
     </option>
   </select>
-  <button type="submit" name="submit" id="submit"  [disabled]="formName.form.invalid">Submit</button>
+  <button type="submit" name="submit" id="submit"  [disabled]="!formName.form.valid" >Submit</button>
 </form>

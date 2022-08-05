@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Friend} from "../friend";
+import {FormGroup, Validator} from "@angular/forms";
 
 @Component({
   selector: 'app-form-component',
@@ -12,9 +13,11 @@ export class FormComponentComponent implements OnInit {
 
   friendModel = new Friend('','','','','');
 
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

@@ -1,5 +1,105 @@
 # basic-angular-form
 
+## What is angular?
+
+Angular is a development platform, built on TypeScript. As a platform, Angular includes:
+
+A component-based framework for building scalable web applications
+A collection of well-integrated libraries that cover a wide variety of features, including routing, forms management, client-server communication, and more
+A suite of developer tools to help you develop, build, test, and update your code
+
+## Angular: the essentials
+
+### 1) Components
+
+Components are the building blocks that compose an application. A component includes a TypeScript class with a @Component() decorator, an HTML template, and styles. The @Component() decorator specifies the following Angular-specific information:
+
+ - A CSS selector that defines how the component is used in a template. HTML elements in your template that match this selector become instances of the component.
+
+ - An HTML template that instructs Angular how to render the component
+
+ - An optional set of CSS styles that define the appearance of the template's HTML elements
+
+The following is a minimal Angular component:
+import { Component } from '@angular/core';
+
+![component](images/img.png)
+
+To use this component, you write the following in a template:
+
+![use_component](images/img_1.png)
+
+When Angular renders this component, the resulting DOM looks like this:
+
+![component_render](images/img_2.png)
+
+Angular's component model offers strong encapsulation and an intuitive application structure. Components also make your application painless to unit test and can improve the overall readability of your code.
+
+
+### 2) Templates
+Every component has an HTML template that declares how that component renders. You define this template either inline or by file path.
+
+Angular extends HTML with additional syntax that lets you insert dynamic values from your component. Angular automatically updates the rendered DOM when your component's state changes. One application of this feature is inserting dynamic text, as shown in the following example.
+
+![templates](images/img_3.png)
+
+The value for message comes from the component class:
+
+![templates_component](images/img_4.png)
+
+When the application loads the component and its template, the user sees the following:
+
+![img.png](images/img12.png)
+
+Notice the use of double curly braces—they instruct Angular to interpolate the contents within them.
+
+Angular also supports property bindings, to help you set values for properties and attributes of HTML elements and pass values to your application's presentation logic.
+
+![templates_binding](images/img_5_.png)
+
+Notice the use of the square brackets—that syntax indicates that you're binding the property or attribute to a value in the component class.
+
+Declare event listeners to listen for and respond to user actions such as keystrokes, mouse movements, clicks, and touches. You declare an event listener by specifying the event name in parentheses:
+
+![templates_binding](images/img_6_.png)
+
+The preceding example calls a method, which is defined in the component class:
+
+![templates_method](images/img_7_.png)
+
+The following is a combined example of Interpolation, Property Binding and Event Binding within an Angular template:
+
+Component typescript example:
+![templates_bindings_components_ts](images/img_8_.png)
+
+component html example:
+![templates_bindings_components_html](images/img_9_.png)
+
+Add additional functionality to your templates through the use of directives. The most popular directives in Angular are *ngIf and *ngFor. Use directives to perform a variety of tasks, such as dynamically modifying the DOM structure. And create your own custom directives to create great user experiences.
+
+The following code is an example of the *ngIf directive.
+
+*ngIF component example typescript example
+![ngif_component_ts](images/img_10_.png)
+
+*ngIF component example html example
+![img.png](images/img_11_.png)
+
+Angular's declarative templates let you cleanly separate your application's logic from its presentation. Templates are based on standard HTML, for ease in building, maintaining, and updating.
+
+### 3) Dependency Injection
+
+Dependency injection lets you declare the dependencies of your TypeScript classes without taking care of their instantiation. Instead, Angular handles the instantiation for you. This design pattern lets you write more testable and flexible code. Even though understanding dependency injection is not critical to start using Angular, we strongly recommend it as a best practice and many aspects of Angular take advantage of it to some degree.
+
+To illustrate how dependency injection works, consider the following example. The first file, logger.service.ts, defines a Logger class. This class contains a writeCount function that logs a number to the console.
+
+![dependencies](images/img13.png)
+
+Next, the hello-world-di.component.ts file defines an Angular component. This component contains a button that uses the writeCount function of the Logger class. To access that function, the Logger service is injected into the HelloWorldDI class by adding private logger: Logger to the constructor.
+
+![dependencies](images/img_14.png)
+
+
 ## Learning Objectives
 After this learning challenge, you'll be able to:
 - Use the angular cli commands
@@ -143,4 +243,5 @@ A POST request to add a friend to your friend list.
     - Make seperate pages by generating new components! You'll have to look into routing as well!
     - Get creative!
 20. [ ] Congratulations, you survived the first steps of Angular and Node. I'm proud of you!
+
 

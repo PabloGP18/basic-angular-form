@@ -208,7 +208,7 @@ A POST request to add a friend to your friend list.
     - To add this friend to your friendlist server, we'll need to make a service for it. We'll use the cli for this and input the command <code>ng g s addFriend</code>. This means, a"ng"ular "g"enerate "s"ervice with name "addFriendService", when you generate a service you'll see that after the name you've given it will automatically add "Service" after it.
     - In your newly generated addFriend.service.ts file, import the HttpClient. In your addFriend class, add a new private property called http to the constructor. Typehint it to be of type HttpClient.
     - You'll also have to import the HttpClientModule in your app.module.ts, also add it to the imports array below.
-15. [x] We now have our data on submit and we're in a position to start http requests. Now we want to post our data to a server.
+15.  [x] We now have our data on submit and we're in a position to start http requests. Now we want to post our data to a server.
     - In the service, make a method called addFriend and give it a parameter, typehint it to be of the Friend type. You'll also need to import Friend.
     - In this method, write a post request. It looks like this: <code>this.http.post<any>(url, data)</code>. Return it afterwards, what you'll get back in something called an observable. http is the property HttpClient, <any> is the type of data your post can contain and url is the url you're sending the data to.
     - We'll get back to the url later. For now, make a property called 'url' and leave it as an empty string.
@@ -216,7 +216,7 @@ A POST request to add a friend to your friend list.
     - Now we can use the service in the method that triggers when the form gets submitted. In the method, call the addFriend method of the addFriendService and pass the friend data to it.
     - The method we made returns something called an "observable". If you want, you can also work with promises, however in this case we used an observable and to get the data out of it, we need to subscribe to it.
     - The code to subscribe to an observable looks like this <code>observable.subscribe(data => it worked, error => it didn't work)</code>.
-16. [ ] Everything is set up in order to send data to your local api.
+16. [x] Everything is set up in order to send data to your local api.
     - First, in the server.js file in the server folder, change the port to whatever number you like that is not occupied. Port numbers 9000 - 9099 are always safe, just make sure no other application is running on those ports.
     - In the server folder in your terminal, run the command <code>node server</code>. You won't get any confirmation that the server is running, just a blank new line. Now navigate to <code>localhost:PORT</code>.
     - You should see "Hello from server". That is because the get function in the server file with the root "/" as it's path sent it as a response.

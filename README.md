@@ -99,7 +99,7 @@ To illustrate how dependency injection works, consider the following example. Th
 
 Next, the hello-world-di.component.ts file defines an Angular component. This component contains a button that uses the writeCount function of the Logger class. To access that function, the Logger service is injected into the HelloWorldDI class by adding private logger: Logger to the constructor.
 
-![dependencies](images/img_14.png)
+![dependencies](images/img14.png)
 
 
 ## Learning Objectives

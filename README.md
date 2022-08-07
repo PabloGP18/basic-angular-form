@@ -72,7 +72,9 @@ The following is a combined example of Interpolation, Property Binding and Event
 Component typescript example:
 ![templates_bindings_components_ts](images/img_8_.png)
 
+
 component html example:
+
 ![templates_bindings_components_html](images/img_9_.png)
 
 Add additional functionality to your templates through the use of directives. The most popular directives in Angular are *ngIf and *ngFor. Use directives to perform a variety of tasks, such as dynamically modifying the DOM structure. And create your own custom directives to create great user experiences.

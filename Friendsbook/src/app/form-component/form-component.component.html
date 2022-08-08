@@ -45,5 +45,9 @@
     {{language}}
     </option>
   </select>
+
+  <div *ngFor="let friend of allFriends">
+    {{friend._email}}
+  </div>
   <button type="submit" name="submit" id="submit"  [disabled]="!formName.form.valid" >Submit</button>
 </form>

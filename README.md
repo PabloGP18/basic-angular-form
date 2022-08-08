@@ -225,7 +225,7 @@ A POST request to add a friend to your friend list.
     - Remember the url that we left empty? It's time to configure a path to which we'll post our data. Start by changing the url to <code>'http://localhost:PORT/'</code>.
     - Next, make a new post function with path "addFriend". In here, push the request body to the allFriends array.
     - If you now go to your form and add a friend, submit the form, you'll see in your server, localhost:PORT/allFriends, that the friend has been added to the list.
-17. [ ] You've sent data, but now we also want to display the newly updated friend list on your page. To do this, we'll have to make a get request to the server.
+17. [x] You've sent data, but now we also want to display the newly updated friend list on your page. To do this, we'll have to make a get request to the server.
     - We want to do this get request in 2 different cases, one is when the page loads and the other is when we post data to the server.
     - First, let's write the function itself and later call the function when we need it. Make a new public async function in the component and pass the url as a parameter. Typehint the parameter and the function. The function will return a Promise of type any. A typehint of a promise with type looks like this: <code>Promise<any></code>.
     - Then, add a fetch to the function and return and await it. The method should be get and the headers should be <code>'Content-Type': 'application/json'</code>.
@@ -235,7 +235,7 @@ A POST request to add a friend to your friend list.
     - To make something happen on pageload, in the class add <code>ngOnInit(): any { something happens }</code>. In here, call your fetch function like we did previously for the form submit.
     - We now have our friend list updated in the property allFriends of the component class.
     -  To check if you have your friends data console log it.
-18. [ ] Now we can display the friends in the template using the property allFriends.
+18. [x] Now we can display the friends in the template using the property allFriends.
     - To do this we'll use the ngFor loop, add the following code to a div: <code>*ngFor="let friend of allFriends"</code>.
     - In this div, if you enter {{ friend.email }} for example. You'll see that on your page you'll see all the emails of your friends displayed.
     - Now display all details of your friends, try adding new friends in the process. It updates instantly!

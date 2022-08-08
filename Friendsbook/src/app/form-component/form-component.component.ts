@@ -10,11 +10,17 @@ import {AddFriendService} from "../add-friend.service"
 })
 export class FormComponentComponent implements OnInit {
 
+  friendsUrl: string = this.addFriendService.url + 'allFriends';
+  allFriends: any;
+
   languages = ['html','css','js','php','typescript'];
 
   friendModel = new Friend('','','','','');
 
   constructor (private addFriendService: AddFriendService) {}
+
+
+
 
   ngOnInit(): void {}
 
@@ -27,13 +33,18 @@ export class FormComponentComponent implements OnInit {
       next: (data) => {
         console.log(data);
         console.log('success!');
+        this.fetchFriend()
       },
       error: (error) => {
         console.log(error);
         console.log('failed');
       },
     });
-
   }
 
+  public async fetchFriend(): Promise<any> {
+       const data = await fetch(this.friendsUrl);
+      this.allFriends = await data.json();
+      console.log(this.allFriends);
+  }
 }

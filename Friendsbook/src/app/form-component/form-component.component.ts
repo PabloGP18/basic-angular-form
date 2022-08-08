@@ -22,7 +22,9 @@ export class FormComponentComponent implements OnInit {
 
 
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.fetchFriend()
+  }
 
   submitForm() {
     console.log(this.friendModel);
